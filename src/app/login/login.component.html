@@ -1,0 +1,22 @@
+<div class="container">
+    <header>
+      <h1>BarberTime</h1>
+    </header>
+    <form #f="ngForm" (ngSubmit)="onSubmit(f)" class="text-center mt-5">
+      <div class="form-group">
+        <label for="nome">Nome</label>
+        <input type="text" name="nome" id="nome" [(ngModel)]="email" class="form-control" placeholder="Nome">
+      </div>
+      <div class="form-group">
+        <label for="senha">Senha</label>
+        <input type="password" name="senha" id="senha" [(ngModel)]="senha" required class="form-control" placeholder="Senha">
+      </div>
+      <div class="form-group">
+        <button class="btn btn-primary mt-3 me-3" type="submit">LOGIN</button>
+        <a routerLink="cadastro" class="btn btn-primary mt-3" type="button">CADASTRO</a>
+      </div>
+      <div *ngIf="erro" class="alert alert-danger mt-3">
+        e-mail ou senha está incorreto.
+      </div>
+    </form>
+  </div>
