@@ -1,17 +1,11 @@
-<div class="container">
-    <h1>Barber Time</h1>
-    <div class="services">
-      <div class="service">
-        <button  routerLink="/servico">Barbearia A </button>
-      </div>
-      <div class="service">
-        <button  routerLink="/servico">Barbearia A </button>
-      </div>
-      <div class="service">
-        <button  routerLink="/servico">Barbearia A </button>
-      </div>
-      <div class="service">
-        <button  routerLink="/servico">Barbearia A </button>
-      </div>
+<header>
+  <h1>Barber Time</h1>
+</header>
+<div class="barbearias-container">
+  <div class="barbearia" *ngFor="let barbearia of barbearias">
+    <div class="barbearia-info">
+      <button routerLink="/servico" class="barbearia-nome">{{ barbearia.nome }}</button>
+     
     </div>
   </div>
+</div>
