@@ -21,10 +21,7 @@ const agendamentoSchema = new mongoose.Schema({
       type: String,
       required: true
   },
-  servico: {
-      type: String,
-      required: true
-  }
+ 
   
 });
 

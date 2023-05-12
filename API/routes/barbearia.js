@@ -12,4 +12,20 @@ router.get('/barbearias', async (req, res) => {
   }
 });
 
+router.get('/:id', async (req, res) => {
+  const _id = req.params.id;
+
+  try {
+    const barbearia = await Barbearia.findById(_id);
+
+    if (!barbearia) {
+      return res.status(404).send();
+    }
+
+    res.send(barbearia);
+  } catch (error) {
+    res.status(500).send();
+  }
+});
+
 module.exports = router;

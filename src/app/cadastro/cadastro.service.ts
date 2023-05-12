@@ -8,7 +8,7 @@ import { cliente } from '../clientes/clientes';
 })
 export class CadastroService {
 
-  private apiUrl = 'http://localhost:3000/cadastro/create'
+  private apiUrl = 'http://localhost:3000/cadastro'
 
   constructor(private http: HttpClient) { }
 

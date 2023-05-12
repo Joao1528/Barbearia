@@ -4,9 +4,6 @@ import { LoginServiceService } from './login-service.service';
 import { Router } from '@angular/router';
 
 
-
-
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -23,10 +20,8 @@ export class LoginComponent {
   erro: boolean = false;
  
   
-  
   cliente: cliente[] = [];
  
-  
 
   constructor(private LoginServiceService: LoginServiceService, private  router: Router ) { }
   
@@ -52,11 +47,6 @@ export class LoginComponent {
       }
     )
    
- 
-    
-    
-
-    
 
     }
    

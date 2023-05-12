@@ -1,77 +1,73 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 50px;
-    text-align: center;
-  }
-  
-  h1 {
-    font-size: 3rem;
-    color: #333;
-    margin-bottom: 50px;
-  }
-  
-  .services {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-  
-  .service {
-    display: flex;
-    flex-direction: column;
-    width: 45%;
-    height: 200px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.3);
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 30px;
-  }
-  
-  .service h2 {
-    font-size: 2rem;
-    color: #333;
-    text-transform: uppercase;
-  }
+/* Estilo para o cabeçalho */
+header {
+	background-color: #333;
+	color: white;
+	padding: 20px;
+	text-align: center;
+}
 
-  .btn-agendar {
-    background-color: #333;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-size: 1.2rem;
-    cursor: pointer;
-    margin-top: 20px;
-    transition: all 0.3s ease;
-  }
-  
-  .btn-agendar:hover {
-    background-color: #fff;
-    color: #333;
-  }
+header h1 {
+	font-size: 36px;
+	margin: 0;
+}
 
-  .btn-voltar {
-    background-color: #333;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-size: 1.2rem;
-    cursor: pointer;
-    margin-top: 20px;
-    transition: all 0.3s ease;
-  }
-  
-  .btn-voltar:hover {
-    background-color: #fff;
-    color: #333;
-  }
+/* Estilo para a seção de informações */
+.info {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	padding: 20px;
+}
+
+.info div {
+	background-color: #f2f2f2;
+	border-radius: 10px;
+	box-shadow: 0 0 10px #999;
+	margin: 10px;
+	padding: 20px;
+	text-align: center;
+	width: 300px;
+}
+
+.info h2 {
+	color: #333;
+	font-size: 24px;
+	margin-bottom: 10px;
+}
+
+.info p {
+	color: #666;
+	font-size: 18px;
+	line-height: 1.5;
+	margin-bottom: 20px;
+}
+
+/* Estilo para o rodapé */
+footer {
+	background-color: #333;
+	color: white;
+	padding: 15px;
+	text-align: center;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+}
+
+footer p {
+	margin: 0;
+}
+
+.btn-agendar {
+	background-color: #007bff;
+	border: none;
+	color: #fff;
+	padding: 10px 20px;
+	border-radius: 5px;
+	cursor: pointer;
+	display: block;
+	margin: 0 auto;
+}
+
+.btn-agendar:hover {
+	background-color: #0069d9;
+}

@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { MenuService } from '../menu/menu.service';
+import { Barbearia } from '../menu/barbearia';
 
 @Component({
   selector: 'app-servicos',
@@ -7,4 +9,17 @@ import { Component } from '@angular/core';
 })
 export class ServicosComponent {
 
+  
+  barbearias: Barbearia[] = [];
+
+  constructor(private MenuService: MenuService) {}
+
+  ngOnInit(){
+    this.MenuService.getBarbearias().subscribe(
+      Barbearias => {
+        this.barbearias = Barbearias;
+      }
+    );
+
+  }
 }

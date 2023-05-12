@@ -17,7 +17,7 @@ const barbeariaSchema = new mongoose.Schema({
     servicos: [{
       type: mongoose.Schema.Types.ObjectId,
       ref: 'Servico'
-    }]
+    }] 
   });
   
   module.exports = mongoose.model('Barbearia', barbeariaSchema);

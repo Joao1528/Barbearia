@@ -18,6 +18,7 @@ const clienteSchema = new mongoose.Schema({
     type:String,
     require: true
   },
+  
 
   
   

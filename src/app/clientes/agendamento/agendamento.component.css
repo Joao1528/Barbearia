@@ -1,81 +1,83 @@
-/* Estrutura */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-  }
-  
-  /* Cabeçalho */
-  h1 {
-    font-size: 3rem;
-    color: #333;
-    margin-bottom: 50px;
-  }
-  
-  /* Formulário */
-  .appointment {
-    width: 60%;
-    margin: 0 auto;
-    text-align: center;
-  }
-  
-  /* Botão */
-  .btn-agendar {
-    margin-top: 50px;
-    font-size: 1.2rem;
-    background-color: #333;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
-  
-  /* Botão (hover) */
-  .btn-agendar:hover {
-    background-color: #fff;
-    color: #333;
-    border: 1px solid #333;
-  }
-  /* Estrutura */
-  body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-  }
-  
-  /* Cabeçalho */
-  h1 {
-    font-size: 3rem;
-    color: #333;
-    margin-bottom: 50px;
-  }
-  
-  /* Formulário */
-  .appointment {
-    width: 60%;
-    margin: 0 auto;
-    text-align: center;
-  }
-  
-  /* Botão */
-  .btn-agendar {
-    margin-top: 50px;
-    font-size: 1.2rem;
-    background-color: #333;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
-  
-  /* Botão (hover) */
-  .btn-agendar:hover {
-    background-color: #fff;
-    color: #333;
-    border: 1px solid #333;
-  }
-  
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.appointment {
+  background-color: #f7f7f7;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.barbearia-info {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.calendar {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+h4 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.date {
+  margin-bottom: 10px;
+}
+
+.date p {
+  font-size: 16px;
+  margin: 0;
+}
+
+.time label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.btn-agendar {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}

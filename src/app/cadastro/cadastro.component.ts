@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { cliente } from '../clientes/clientes';
 import { CadastroService } from './cadastro.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cadastro',
@@ -16,7 +17,7 @@ export class CadastroComponent {
   senha: string = ""
  
 
-  constructor(private CadastroService: CadastroService) { }
+  constructor(private CadastroService: CadastroService, private  router: Router) { }
  
 
   onSubmit(form: any){
@@ -37,7 +38,7 @@ export class CadastroComponent {
     this.CadastroService .newCliente(cliente).subscribe(
       cliente => {
         console.log(cliente);
-        
+        this.router.navigate(['']);
       }
     )
   }

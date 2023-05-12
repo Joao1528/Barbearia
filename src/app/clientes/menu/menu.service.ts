@@ -11,17 +11,21 @@ import { Router } from '@angular/router';
 })
 export class MenuService {
 
-  private apiUrl = 'http://localhost:3000/barbearia/barbearias'
+  private apiUrl = 'http://localhost:3000/barbearias'
 
   constructor(private http: HttpClient) { }
 
   barbearia: Barbearia [] = []
 
   
-  getBarbearia(): Observable<Barbearia[]>{
+  getBarbearias(): Observable<Barbearia[]>{
     return this.http.get<Barbearia[]>(this.apiUrl);
   }
 
   
+  getBarbearia(id: number): Observable<Barbearia> {
+    const url = `${this.apiUrl}/${id}`; 
+    return this.http.get<Barbearia>(url);
 
+  } 
 }

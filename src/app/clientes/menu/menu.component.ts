@@ -12,14 +12,14 @@ export class MenuComponent {
 
 
 
-  barbearias: Barbearia[] = [];
+  barbearia: Barbearia[] = [];
 
   constructor(private MenuService: MenuService) {}
 
   ngOnInit(){
-    this.MenuService.getBarbearia().subscribe(
-      Barbearias => {
-        this.barbearias = Barbearias;
+    this.MenuService.getBarbearias().subscribe(
+      Barbearia => {
+        this.barbearia = Barbearia;
       }
     );
 

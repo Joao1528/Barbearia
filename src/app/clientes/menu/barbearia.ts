@@ -1,6 +1,6 @@
 export class Barbearia{
 
-    _id?: any
+    _id?: string
     nome?:string
     endereco?: String 
     telefone?: String 

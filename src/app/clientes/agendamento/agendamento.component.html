@@ -1,25 +1,32 @@
 <div class="container">
-    <h1>Barber Time</h1>
-    <div class="appointment">
-      <h2>Barbearia A</h2>
-      <h3>Corte completo</h3>
-      <div class="calendar">
-        <h4>Selecione o dia e horário:</h4>
-        <div class="date">
-          <p>Quinta-feira</p>
-          <p>10 de maio de 2023</p>
-        </div>
-        <div class="time">
-          <label for="horario">Horário:</label>
-          <select id="horario">
-            <option value="10:00">10:00</option>
-            <option value="11:00">11:00</option>
-            <option value="12:00">12:00</option>
-            <option value="13:00">13:00</option>
-          </select>
-        </div>
-      </div>
-      <button class="btn-agendar">Finalizar agendamento</button>
+  <h1>Barber Time</h1>
+  <div class="appointment">
+    <h2>Barbearia A</h2>
+
+    <div class="barbearia-info">
+      <label for="servico">Serviço:</label>
+      <select name="servico" id="servico">
+        <option *ngFor="let servico of servicos" [value]="servico.nome">{{ servico.nome }}</option>
+      </select>
     </div>
+    
+    <div class="calendar">
+      <h4>Selecione o dia e horário:</h4>
+      <div class="date">
+        <select name="servico" id="servico">
+          <option *ngFor="let dia of dias" [value]="dia.dia">{{ dia.dia }}</option>
+        </select>
+        
+      </div>
+      <div class="time">
+        <label for="horario">Horário:</label>
+        <div class="date">
+          <select name="servico" id="servico">
+            <option *ngFor="let hora of horas" [value]="hora.hora">{{ hora.hora }}</option>
+          </select>
+      </div>
+    </div>
+    <button type ="submit" btn-agendar>Finalizar agendamento</button>
   </div>
+</div>
 

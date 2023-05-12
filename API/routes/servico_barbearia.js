@@ -3,7 +3,7 @@ const router = express.Router();
 const Servico = require('../models/servicos_barbearia');
 
 // Rota para criar um novo serviço de barbearia
-router.post('/servicos', async (req, res) => {
+router.post('/servicosss', async (req, res) => {
   try {
     const servico = new Servico(req.body);
     await servico.save();
@@ -13,8 +13,9 @@ router.post('/servicos', async (req, res) => {
   }
 });
 
-// Rota para listar todos os serviços de barbearia
-router.get('/servicos', async (req, res) => {
+ // Rota para listar todos os serviços de barbearia
+
+router.get('/list', async (req, res) => {
   try {
     const servicos = await Servico.find({});
     res.send(servicos);
