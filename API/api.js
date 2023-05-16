@@ -31,7 +31,7 @@ app.use(cors({origin: "*"}));
 app.use('', agendamentoRoutes);
 app.use('',loginRoutes)
 app.use('',cadastroRoutes)
-app.use('', barbeariaRoutes);
+app.use('/barbearia', barbeariaRoutes);
 app.use('/servicos', servicoRoutes);
 app.use('/dias', diaRouter);
 

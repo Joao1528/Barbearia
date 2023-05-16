@@ -4,7 +4,7 @@
 <div class="barbearias-container">
   <div class="barbearia" *ngFor="let barbearia of barbearia">
     <div class="barbearia-info">
-      <button routerLink="/servico" class="barbearia-nome">{{ barbearia.nome }}</button>
+      <button [routerLink]="'/servico/' + barbearia._id" class="barbearia-nome">{{ barbearia.nome }}</button>
      
     </div>
   </div>

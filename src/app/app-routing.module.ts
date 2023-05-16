@@ -11,7 +11,7 @@ const routes: Routes = [
 
 {path: 'menu',component:MenuComponent},
 {path: '',component:LoginComponent},
-{path: 'servico',component:ServicosComponent},
+{path: 'servico/:id',component:ServicosComponent},
 {path: 'agendar',component:AgendamentoComponent},
 {path: 'cadastro',component:CadastroComponent}
 

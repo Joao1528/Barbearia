@@ -9,7 +9,8 @@ import { Router } from '@angular/router';
 })
 export class MenuService {
 
-  private apiUrl = 'http://localhost:3000/barbearias';
+  private apiUrl = 'http://localhost:3000/barbearia/barbearias';
+  private apiUrl2 = 'http://localhost:3000/barbearia';
 
   constructor(private http: HttpClient) { }
 
@@ -20,7 +21,7 @@ export class MenuService {
   }
 
   getBarbearia(id: number): Observable<Barbearia> {
-    const url = `${this.apiUrl}/${id}`;
+    const url = `${this.apiUrl2}/${id}`;
     return this.http.get<Barbearia>(url);
   }
 }
