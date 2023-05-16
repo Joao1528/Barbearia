@@ -1,23 +1,20 @@
 const mongoose = require('mongoose');
 
 const agendamentoSchema = new mongoose.Schema({
-  nome: {
+  // cliente: [{
+  //   type: mongoose.Schema.Types.ObjectId,
+  //   ref: 'cliente'
+  //   required :false
+  // }],
+  servicos: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'servicos_barbearia'
+  }], 
+  dia: {
       type: String,
       required: true
   },
-  email: {
-      type: String,
-      required: true
-  },
-  telefone: {
-      type: String,
-      required: true
-  },
-  data: {
-      type: String,
-      required: true
-  },
-  horario: {
+  hora: {
       type: String,
       required: true
   },

@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const { Dia, Hora } = require('../models/dia');
 
-router.post('/novoDIA', async (req, res) => {
+router.post('/novaDia', async (req, res) => {
   try {
     const dia = new Dia(req.body);
     await dia.save();

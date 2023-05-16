@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { HttpClient,HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Barbearia } from './barbearia';
-
-import { of } from 'rxjs';
 import { Router } from '@angular/router';
 
 @Injectable({
@@ -11,21 +9,18 @@ import { Router } from '@angular/router';
 })
 export class MenuService {
 
-  private apiUrl = 'http://localhost:3000/barbearias'
+  private apiUrl = 'http://localhost:3000/barbearias';
 
   constructor(private http: HttpClient) { }
 
-  barbearia: Barbearia [] = []
+  barbearia: Barbearia [] = [];
 
-  
-  getBarbearias(): Observable<Barbearia[]>{
+  getBarbearias(): Observable<Barbearia[]> {
     return this.http.get<Barbearia[]>(this.apiUrl);
   }
 
-  
   getBarbearia(id: number): Observable<Barbearia> {
-    const url = `${this.apiUrl}/${id}`; 
+    const url = `${this.apiUrl}/${id}`;
     return this.http.get<Barbearia>(url);
-
-  } 
+  }
 }

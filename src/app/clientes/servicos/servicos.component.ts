@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
-import { MenuService } from '../menu/menu.service';
-import { Barbearia } from '../menu/barbearia';
+
+import { ListService } from './list.service';
+import { Barbearia } from './teste';
+import { ActivatedRoute, Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-servicos',
@@ -9,17 +12,27 @@ import { Barbearia } from '../menu/barbearia';
 })
 export class ServicosComponent {
 
+ 
   
-  barbearias: Barbearia[] = [];
+  barbearia: Barbearia[] = [];
+  barbeariaSelecionada: Barbearia | null = null;
+  constructor(private ListService: ListService , private  router: Router , private activatedRoute: ActivatedRoute) {}
 
-  constructor(private MenuService: MenuService) {}
+  
+  ngOnInit() {
+    // this. ListService.getBarbearias().subscribe(
+    //   barbearias => {
+    //     this.barbearia = barbearias;
+    //   }
+    ;
 
-  ngOnInit(){
-    this.MenuService.getBarbearias().subscribe(
-      Barbearias => {
-        this.barbearias = Barbearias;
-      }
-    );
-
+    const barbeariaId = this.activatedRoute.snapshot.params['id'];
+    if (barbeariaId) {
+      this. ListService.getBarbearia(barbeariaId).subscribe(
+        barbearia => {
+          this.barbeariaSelecionada = barbearia;
+        }
+      );
+    }
   }
 }

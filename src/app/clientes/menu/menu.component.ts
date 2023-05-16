@@ -23,6 +23,16 @@ export class MenuComponent {
       }
     );
 
+    
+
   }
 
-}
+  exibirDetalhes(id: number) {
+    this.MenuService.getBarbearia(id)
+      .subscribe(barbearia => {
+        // Exiba os dados da barbearia selecionada
+        console.log(barbearia);
+      });
+
+
+}}

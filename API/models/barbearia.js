@@ -16,7 +16,7 @@ const barbeariaSchema = new mongoose.Schema({
     },
     servicos: [{
       type: mongoose.Schema.Types.ObjectId,
-      ref: 'Servico'
+      ref: 'servicos_barbearia'
     }] 
   });
   

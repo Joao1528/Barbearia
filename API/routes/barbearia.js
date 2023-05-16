@@ -12,6 +12,16 @@ router.get('/barbearias', async (req, res) => {
   }
 });
 
+router.post('/novaBarbearia', async (req, res) => {
+  try {
+    const baarbearia = new Barbearia(req.body);
+    await baarbearia.save();
+    res.status(201).send(baarbearia);
+  } catch (error) {
+    res.status(400).send(error);
+  }
+});
+
 router.get('/:id', async (req, res) => {
   const _id = req.params.id;
 

@@ -4,6 +4,7 @@ import { HttpClient,HttpHeaders } from '@angular/common/http';
 import{Servicos} from './servicos_agendar'
 import { Dias } from './dia';
 import { Horas } from './hora';
+import { Agenda } from './agendar';
 
 
 
@@ -21,12 +22,14 @@ export class AgendamentoService {
   private apiUrl = 'http://localhost:3000/servicos/list'
   private apiUrl2 = 'http://localhost:3000/dias/dias'
   private apiUrl3 = 'http://localhost:3000/dias/Hora'
+  private apiUrl4 = 'http://localhost:3000/agendar'
 
   constructor(private http: HttpClient) { }
 
   servicos: Servicos [] = []
   dias: Dias[] = []
   horas: Horas[] = []
+  agenda: Agenda[] = []
   
   getServicos(): Observable<Servicos[]>{
     return this.http.get<Servicos[]>(this.apiUrl);
@@ -40,7 +43,9 @@ export class AgendamentoService {
     return this.http.get<Horas[]>(this.apiUrl3);
   }
 
-
+  newAgendamento(data:Agenda): Observable<Agenda> {
+    return this.http.post<Agenda>(this.apiUrl4,data);
+  }
  
 
 }
