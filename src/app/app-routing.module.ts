@@ -12,7 +12,7 @@ const routes: Routes = [
 {path: 'menu',component:MenuComponent},
 {path: '',component:LoginComponent},
 {path: 'servico/:id',component:ServicosComponent},
-{path: 'agendar',component:AgendamentoComponent},
+{path: 'agendar/:id',component:AgendamentoComponent},
 {path: 'cadastro',component:CadastroComponent}
 
 

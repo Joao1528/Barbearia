@@ -8,7 +8,7 @@ import { Barbearia } from './teste';
   providedIn: 'root'
 })
 export class ListService {
-  
+  private apiUrl = 'http://localhost:3000/barbearia/barbearias';
   private apiUrl2 = 'http://localhost:3000/barbearia'
 
   constructor(private http: HttpClient) { }
@@ -16,7 +16,7 @@ export class ListService {
   barbearia: Barbearia [] = []
 
 
- 
+  
 
   getBarbearia(id: number): Observable<Barbearia> {
     const url = `${this.apiUrl2}/${id}`;
@@ -24,5 +24,8 @@ export class ListService {
   }
 
 
+  
+  }
 
-}
+
+

@@ -1,7 +1,7 @@
 <section class="info" *ngIf="barbeariaSelecionada">
 	<div class="barbearia">
-	  <h2>Nome:</h2>
-	  <p>{{ barbeariaSelecionada.nome }}</p>
+	  
+	  <h1>{{ barbeariaSelecionada.nome }}</h1>
 	</div>
   </section>
 
@@ -38,6 +38,6 @@
 
 <button class="btn-agendar" routerLink="/agendar">Agendar</button>
 
-<footer>
-	<p>Barbearia A - Todos os direitos reservados</p>
+<footer *ngIf="barbeariaSelecionada">
+  <p>{{ barbeariaSelecionada.nome }} - Todos os direitos reservados </p>
 </footer>

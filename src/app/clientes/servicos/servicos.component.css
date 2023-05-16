@@ -4,22 +4,22 @@ header {
 	color: white;
 	padding: 20px;
 	text-align: center;
-}
-
-header h1 {
+  }
+  
+  header h1 {
 	font-size: 36px;
 	margin: 0;
-}
-
-/* Estilo para a seção de informações */
-.info {
+  }
+  
+  /* Estilo para a seção de informações */
+  .info {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-around;
 	padding: 20px;
-}
-
-.info div {
+  }
+  
+  .info div {
 	background-color: #f2f2f2;
 	border-radius: 10px;
 	box-shadow: 0 0 10px #999;
@@ -27,23 +27,24 @@ header h1 {
 	padding: 20px;
 	text-align: center;
 	width: 300px;
-}
-
-.info h2 {
+	
+  }
+  
+  .info h2 {
 	color: #333;
 	font-size: 24px;
 	margin-bottom: 10px;
-}
-
-.info p {
+  }
+  
+  .info p {
 	color: #666;
 	font-size: 18px;
 	line-height: 1.5;
 	margin-bottom: 20px;
-}
-
-/* Estilo para o rodapé */
-footer {
+  }
+  
+  /* Estilo para o rodapé */
+  footer {
 	background-color: #333;
 	color: white;
 	padding: 15px;
@@ -51,13 +52,13 @@ footer {
 	position: fixed;
 	bottom: 0;
 	width: 100%;
-}
-
-footer p {
+  }
+  
+  footer p {
 	margin: 0;
-}
-
-.btn-agendar {
+  }
+  
+  .btn-agendar {
 	background-color: #007bff;
 	border: none;
 	color: #fff;
@@ -66,8 +67,9 @@ footer p {
 	cursor: pointer;
 	display: block;
 	margin: 0 auto;
-}
-
-.btn-agendar:hover {
+  }
+  
+  .btn-agendar:hover {
 	background-color: #0069d9;
-}
+  }
+  
