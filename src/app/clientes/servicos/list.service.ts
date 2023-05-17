@@ -15,7 +15,9 @@ export class ListService {
 
   barbearia: Barbearia [] = []
 
-
+  getBarbearias(): Observable<Barbearia[]> {
+    return this.http.get<Barbearia[]>(this.apiUrl);
+  }
   
 
   getBarbearia(id: number): Observable<Barbearia> {
@@ -26,6 +28,7 @@ export class ListService {
 
   
   }
+
 
 
 

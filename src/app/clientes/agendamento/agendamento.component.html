@@ -1,7 +1,13 @@
 <div class="container">
   <h1>Barber Time</h1>
   <div class="appointment">
-    <h2>Barbearia A</h2>
+    
+    <section class="info" *ngIf="barbeariaSelecionada">
+      <div class="barbearia">
+        
+        <h1>{{ barbeariaSelecionada.nome }}</h1>
+      </div>
+      </section>
 
     <form #f="ngForm" (ngSubmit)="onSubmit(f)" action="">
       <div class="barbearia-info">

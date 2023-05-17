@@ -35,8 +35,12 @@
 
 	
 </section>
-
-<button class="btn-agendar" routerLink="/agendar">Agendar</button>
+<section class="info" *ngIf="barbeariaSelecionada">
+	<button [routerLink]="'/agendar/' + barbeariaSelecionada._id" class="barbearia-nome"> 
+		<h1>Entrar</h1>
+	</button>
+</section>
+	
 
 <footer *ngIf="barbeariaSelecionada">
   <p>{{ barbeariaSelecionada.nome }} - Todos os direitos reservados </p>

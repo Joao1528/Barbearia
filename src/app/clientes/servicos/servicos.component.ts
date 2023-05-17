@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
-
 import { ListService } from './list.service';
-import { Barbearia } from './teste';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Barbearia } from '../menu/barbearia';
 
 
 @Component({
@@ -20,11 +19,11 @@ export class ServicosComponent {
 
   
   ngOnInit() {
-    // this. ListService.getBarbearias().subscribe(
-    //   barbearias => {
-    //     this.barbearia = barbearias;
-    //   }
-    ;
+     this. ListService.getBarbearias().subscribe(
+      barbearias => {
+        this.barbearia = barbearias;
+      }
+     )
 
     const barbeariaId = this.activatedRoute.snapshot.params['id'];
     if (barbeariaId) {
@@ -33,6 +32,17 @@ export class ServicosComponent {
           this.barbeariaSelecionada = barbearia;
         }
       );
-    }
+    }   
   }
+
+  
+  mostrarServicos(id: number) {
+    this.ListService.getBarbearia(id).subscribe(barbearia => {
+      this.router.navigate(['/menu', barbearia._id]);
+    });
+  }
+
+
+
+
 }

@@ -10,6 +10,7 @@ import { Agenda } from './agendar';
 
 import { of } from 'rxjs';
 import { Router } from '@angular/router';
+import { Barbearia } from '../menu/barbearia';
 
 
 @Injectable({
@@ -23,6 +24,7 @@ export class AgendamentoService {
   private apiUrl2 = 'http://localhost:3000/dias/dias'
   private apiUrl3 = 'http://localhost:3000/dias/Hora'
   private apiUrl4 = 'http://localhost:3000/agendar'
+  private apiUrl5 = 'http://localhost:3000/barbearia'
 
   constructor(private http: HttpClient) { }
 
@@ -30,6 +32,7 @@ export class AgendamentoService {
   dias: Dias[] = []
   horas: Horas[] = []
   agenda: Agenda[] = []
+  barbearia: Barbearia[] = []
   
   getServicos(): Observable<Servicos[]>{
     return this.http.get<Servicos[]>(this.apiUrl);
@@ -47,5 +50,10 @@ export class AgendamentoService {
     return this.http.post<Agenda>(this.apiUrl4,data);
   }
  
+  getBarbearia(id: number): Observable<Barbearia> {
+    const url = `${this.apiUrl5}/${id}`;
+    return this.http.get<Barbearia>(url);
+  }
+
 
 }
