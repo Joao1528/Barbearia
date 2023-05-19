@@ -25,6 +25,7 @@ export class AgendamentoService {
   private apiUrl3 = 'http://localhost:3000/dias/Hora'
   private apiUrl4 = 'http://localhost:3000/agendar'
   private apiUrl5 = 'http://localhost:3000/barbearia'
+  private apiUrl6 = 'http://localhost:3000/cadastro'
 
   constructor(private http: HttpClient) { }
 
@@ -52,6 +53,11 @@ export class AgendamentoService {
  
   getBarbearia(id: number): Observable<Barbearia> {
     const url = `${this.apiUrl5}/${id}`;
+    return this.http.get<Barbearia>(url);
+  }
+
+  getCliente(id: number): Observable<Barbearia> {
+    const url = `${this.apiUrl6}/${id}`;
     return this.http.get<Barbearia>(url);
   }
 

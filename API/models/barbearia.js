@@ -19,6 +19,7 @@ const barbeariaSchema = new mongoose.Schema({
       ref: 'servicos_barbearia'
     }] 
   });
+
   
   module.exports = mongoose.model('Barbearia', barbeariaSchema);
  

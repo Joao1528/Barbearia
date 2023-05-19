@@ -22,12 +22,12 @@ export class MenuComponent {
     });
   }
 
-  mostrarServicos(id: number) {
-    this.MenuService.getBarbearia(id).subscribe(barbearia => {
-      // Redirecionar o usuário para a página de serviços da barbearia específica
-      this.router.navigate(['/servico', barbearia._id]);
-    });
-  }
+  // mostrarServicos(id: number) {
+  //   this.MenuService.getBarbearia(id).subscribe(barbearia => {
+  //     // Redirecionar o usuário para a página de serviços da barbearia específica
+  //     this.router.navigate(['/servico', barbearia._id]);
+  //   });
+  // }
 }
 
 

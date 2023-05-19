@@ -5,9 +5,8 @@ import { Dias } from './dia';
 import { Horas } from './hora';
 import { Agenda } from './agendar';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Barbearia } from '../menu/barbearia';
 
-
+import { Barbearia } from './barbearia';
 
 @Component({
   selector: 'app-agendamento',
@@ -15,86 +14,65 @@ import { Barbearia } from '../menu/barbearia';
   styleUrls: ['./agendamento.component.css']
 })
 export class AgendamentoComponent {
-
-
   servicos: Servicos[] = [];
   dias: Dias[] = [];
-  horas: Horas[] = []
-  barbearia: Barbearia[] = [];
-
-
+  horas: Horas[] = [];
   barbeariaSelecionada: Barbearia | null = null;
-  
-  //barbearia: string = ""
-  dia?:string = ""
-  hora?:string = ""
-  cliente: string = ""
-  servico: string = ""
+  barbearias: string = "";
+  dia: string = "";
+  hora: string = "";
+  cliente: string = "";
+  servico: string = "";
 
-  constructor(private AgendamentoService : AgendamentoService, private  router: Router , private activatedRoute: ActivatedRoute ) {}
+  constructor(
+    private agendamentoService: AgendamentoService,
+    private router: Router,
+    private activatedRoute: ActivatedRoute
+  ) {}
 
-  ngOnInit(){
-    
-    
-    this.AgendamentoService .getServicos().subscribe(
-      Servicos => {
-        this.servicos = Servicos})
-     
-    
-    
-    this.AgendamentoService.getDias().subscribe(
-      dias => {
-        this.dias = dias;});
-          
- 
+  ngOnInit() {
+    this.agendamentoService.getServicos().subscribe(servicos => {
+      this.servicos = servicos;
+    });
 
-    this.AgendamentoService.getHoras().subscribe(
-      horas => {
-        this.horas = horas;})
-      
+    this.agendamentoService.getDias().subscribe(dias => {
+      this.dias = dias;
+    });
 
-      
-   
+    this.agendamentoService.getHoras().subscribe(horas => {
+      this.horas = horas;
+    });
 
     const barbeariaId = this.activatedRoute.snapshot.params['id'];
     if (barbeariaId) {
-      this.AgendamentoService.getBarbearia(barbeariaId).subscribe(
-        barbearia => {
-          this.barbeariaSelecionada = barbearia;})
-        }
-
+      this.agendamentoService.getBarbearia(barbeariaId).subscribe(barbearia => {
+        this.barbeariaSelecionada = barbearia;
+      });
+    }
   }
 
-  mostrarServicos(id: number) {
-    this.AgendamentoService.getBarbearia(id).subscribe(barbearia => {
-      this.router.navigate(['/menu', barbearia._id]);
-    });
-  }
-
-  onSubmit(form: any){
-    this.barbearia = form.value.barbearia;
+  onSubmit(form: any) {
     this.cliente = form.value.cliente;
-    this.dia = form.value.dia
-    this.hora = form.value.hora
-    this.servico = form.value.servico
-
-
+    this.dia = form.value.dia;
+    this.hora = form.value.hora;
+    this.servico = form.value.servico;
+    this.barbearias = form.value.barbearias;
 
     let agenda: Agenda = {
-     //barbearia: this.barbearia,
-     cliente: this.cliente,
-     dia: this.dia,
-     hora: this.hora,
-     servico: this.servico
-    }; 
+      barbearias: this.barbearias,
+      cliente: this.cliente,
+      dia: this.dia,
+      hora: this.hora,
+      servico: this.servico
+    };
 
-    this.AgendamentoService .newAgendamento(agenda).subscribe(
-      agenda => {
-        console.log(agenda);
-       
+    this.agendamentoService.newAgendamento(agenda).subscribe(
+      response => {
+        console.log(response);
+      },
+      error => {
+        console.log(error);
       }
-    )
+    );
   }
-
-
 }

@@ -25,6 +25,6 @@ const clienteSchema = new mongoose.Schema({
 });
 
 
-const Cliente = mongoose.model('cliente',clienteSchema);
 
-module.exports = Cliente;
+
+module.exports = mongoose.model('cliente',clienteSchema);

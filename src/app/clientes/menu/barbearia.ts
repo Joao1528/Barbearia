@@ -5,6 +5,15 @@ export class Barbearia{
     endereco?: String 
     telefone?: String 
     servicos?: String  
+    
+    
+     constructor(nome:string){
+
+
+        this.nome = nome
+     
+
+    }
 
     
     

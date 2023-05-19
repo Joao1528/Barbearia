@@ -36,11 +36,11 @@ export class ServicosComponent {
   }
 
   
-  mostrarServicos(id: number) {
-    this.ListService.getBarbearia(id).subscribe(barbearia => {
-      this.router.navigate(['/menu', barbearia._id]);
-    });
-  }
+  // mostrarServicos(id: number) {
+  //   this.ListService.getBarbearia(id).subscribe(barbearia => {
+  //     this.router.navigate(['/menu', barbearia._id]);
+  //   });
+  // }
 
 
 

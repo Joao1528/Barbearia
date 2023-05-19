@@ -30,7 +30,7 @@ app.use(cors({origin: "*"}));
 // Rotas
 app.use('', agendamentoRoutes);
 app.use('',loginRoutes)
-app.use('',cadastroRoutes)
+app.use('/cadastro',cadastroRoutes)
 app.use('/barbearia', barbeariaRoutes);
 app.use('/servicos', servicoRoutes);
 app.use('/dias', diaRouter);
