@@ -1,26 +1,18 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { HttpClient,HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { cliente } from '../clientes/clientes';
-import { of } from 'rxjs';
-import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginServiceService {
+  private apiUrl = 'http://localhost:3000/login';
+  public static clienteId: string = '';
 
-  private apiUrl = 'http://localhost:3000/login'
+  constructor(private http: HttpClient) {}
 
-  constructor(private http: HttpClient) { }
-
- 
-  clientes: cliente[] = [];
-  
-
-  getlogin(data:any): Observable<any> {
-    return this.http.post<any>(this.apiUrl, data)
+  getlogin(data: cliente): Observable<cliente> {
+    return this.http.post<cliente>(this.apiUrl, data);
   }
-
 }
-

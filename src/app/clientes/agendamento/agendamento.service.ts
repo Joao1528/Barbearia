@@ -5,11 +5,7 @@ import{Servicos} from './servicos_agendar'
 import { Dias } from './dia';
 import { Horas } from './hora';
 import { Agenda } from './agendar';
-
-
-
-import { of } from 'rxjs';
-import { Router } from '@angular/router';
+import { cliente } from '../clientes';
 import { Barbearia } from '../menu/barbearia';
 
 
@@ -34,6 +30,10 @@ export class AgendamentoService {
   horas: Horas[] = []
   agenda: Agenda[] = []
   barbearia: Barbearia[] = []
+  cliente: cliente[] = []
+  
+  public static clienteId: string = '';
+
   
   getServicos(): Observable<Servicos[]>{
     return this.http.get<Servicos[]>(this.apiUrl);
@@ -56,9 +56,8 @@ export class AgendamentoService {
     return this.http.get<Barbearia>(url);
   }
 
-  getCliente(id: number): Observable<Barbearia> {
-    const url = `${this.apiUrl6}/${id}`;
-    return this.http.get<Barbearia>(url);
+  getCliente(data: cliente): Observable<cliente> {
+    return this.http.post<cliente>(this.apiUrl6, data);
   }
 
 

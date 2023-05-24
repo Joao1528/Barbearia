@@ -17,14 +17,25 @@
 
      
 
+      <!-- <div class="barbearia-info">
+        <label for="servico">clientes:</label>
+        <select [(ngModel)]="cliente" name="cliente" id="cliente">
+          <option *ngFor="let cliente of clientes" [value]="cliente._id">{{ cliente.nome }}</option>
+        </select>
+      </div> -->
+      
+
+     
+
 
 
       <div class="barbearia-info">
         <label for="servico">Serviço:</label>
         <select [(ngModel)]="servico" name="servico" id="servico">
-          <option *ngFor="let servico of servicos" [value]="servico.nome">{{ servico.nome }}</option>
+          <option *ngFor="let servico of servicos" [value]="servico._id">{{ servico.nome }}</option>
         </select>
       </div>
+
 
       <div class="calendar">
         <h4>Selecione o dia e horário:</h4>

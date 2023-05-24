@@ -10,6 +10,7 @@ import { LoginComponent } from './login/login.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { Router } from '@angular/router';
+import { AgendamentosComponent } from './barbearia/agendamentos/agendamentos.component';
 
 
 
@@ -21,6 +22,7 @@ import { Router } from '@angular/router';
     AgendamentoComponent,
     LoginComponent,
     CadastroComponent,
+    AgendamentosComponent,
     
   ],
   imports: [

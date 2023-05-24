@@ -1,14 +1,14 @@
 export class cliente{
 
 
-    _id?: any
+    _id?: string
     nome?:string
     email?: string
     telefone?: string
     senha?: string
     
 
-    constructor(_id:any,nome:string, email: string,telefone: string, senha: string){
+    constructor(_id:string,nome:string, email: string,telefone: string, senha: string){
 
 
         this._id = _id,
