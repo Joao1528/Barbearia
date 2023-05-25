@@ -6,14 +6,28 @@ const Barbearia = require('../models/barbearia');
 const Cliente = require('../models/cliente');
 
 router.post('/agendar', async (req, res) => {
-  const { servicos, dia, hora, barbearias, cliente } = req.body;
+  const { servicos, dia, hora, barbearias, nome, email } = req.body;
 
   try {
+    // Verificar se a barbearia já está agendada no mesmo dia e hora
+    const agendamentoExistente = await Agendamento.findOne({
+      barbearias: barbearias,
+      dia: dia,
+      hora: hora
+    });
+
+    if (agendamentoExistente) {
+      return res.status(400).json({ message: 'A barbearia já está agendada nesse dia e hora.' });
+    }
+
     // Obter os detalhes do cliente, serviço e barbearia pelo ID
     const servicosObj = await Servico.findById(servicos);
     const barbeariaObj = await Barbearia.findById(barbearias);
-    const clienteObj = await Cliente.findById(cliente);
-    
+
+    const clienteExistente = await Cliente.findOne({ email: email });
+    if (!clienteExistente) {
+      return res.status(400).json({ message: 'O e-mail do cliente não está cadastrado.' });
+    }
 
     // Criar um novo agendamento
     const novoAgendamento = new Agendamento({
@@ -21,7 +35,8 @@ router.post('/agendar', async (req, res) => {
       dia,
       hora,
       barbearias: barbeariaObj,
-      cliente: clienteObj
+      nome,
+      email
     });
     await novoAgendamento.save();
 
@@ -35,6 +50,7 @@ router.post('/agendar', async (req, res) => {
     res.status(400).json({ message: error.message });
   }
 });
+
 
 
 router.get('/clientes', async (req, res) => {

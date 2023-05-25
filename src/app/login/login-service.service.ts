@@ -8,6 +8,7 @@ import { cliente } from '../clientes/clientes';
 })
 export class LoginServiceService {
   private apiUrl = 'http://localhost:3000/login';
+  private apiUr2 = 'http://localhost:3000/teste';
   public static clienteId: string = '';
 
   constructor(private http: HttpClient) {}
@@ -15,4 +16,6 @@ export class LoginServiceService {
   getlogin(data: cliente): Observable<cliente> {
     return this.http.post<cliente>(this.apiUrl, data);
   }
+
+ 
 }

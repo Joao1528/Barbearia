@@ -17,11 +17,14 @@ const agendamentoSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Barbearia'
   },
-  //  cliente: {
-  //     type: mongoose.Schema.Types.ObjectId,
-  //    ref: 'cliente',
-  //    required: true
-  //   }
+   nome: {
+    type: String,
+    required: true
+    },
+    email: {
+      type: String,
+      required: true
+    }
 });
 
 const Agendamento = mongoose.model('Agendamento', agendamentoSchema);

@@ -56,8 +56,8 @@ export class AgendamentoService {
     return this.http.get<Barbearia>(url);
   }
 
-  getCliente(data: cliente): Observable<cliente> {
-    return this.http.post<cliente>(this.apiUrl6, data);
+  getCliente(): Observable<cliente[]>{
+    return this.http.get<cliente[]>(this.apiUrl6);
   }
 
 

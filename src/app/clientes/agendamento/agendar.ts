@@ -5,8 +5,9 @@ export class Agenda{
     barbearias: string
     dia?:string
     hora?:string
-    cliente?: string
+    nome?: string
     servicos?: string
+    email?: string
    
     
 
@@ -17,7 +18,7 @@ export class Agenda{
         this.dia = dia
         this.hora = hora
         this.barbearias = barbearias
-        this.cliente = cliente
+       
         this.servicos = servico
      
 

@@ -18,5 +18,5 @@ const clienteSchema = new mongoose.Schema({
     require: true
   }
 });
-
-module.exports = mongoose.model('cliente', clienteSchema);
+ ;
+module.exports =  mongoose.model('Cliente', clienteSchema)

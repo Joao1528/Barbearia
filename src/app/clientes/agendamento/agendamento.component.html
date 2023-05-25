@@ -7,52 +7,53 @@
       </div>
     </section>
 
-    <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+    <form #f="ngForm" (ngSubmit)="onSubmit(f)" class="mt-4">
       <div class="barbearia-info">
         <label for="barbearia">Barbearia:</label>
-        <select [(ngModel)]="barbearias" name="barbearias" id="barbearias">
+        <select [(ngModel)]="barbearias" name="barbearias" id="barbearias" class="form-control">
           <option *ngIf="barbeariaSelecionada" [value]="barbeariaSelecionada._id">{{ barbeariaSelecionada.nome }}</option>
         </select>
       </div>
 
-     
-
-      <!-- <div class="barbearia-info">
-        <label for="servico">clientes:</label>
-        <select [(ngModel)]="cliente" name="cliente" id="cliente">
-          <option *ngFor="let cliente of clientes" [value]="cliente._id">{{ cliente.nome }}</option>
-        </select>
-      </div> -->
+      <div class="form-group mt-4">
+        <label for="email">E-mail</label>
+        <input type="text" name="email" id="email" [(ngModel)]="email" class="form-control" placeholder="email">
+      </div>
       
-
-     
-
-
+      <div class="form-group">
+        <label for="nome">Nome</label>
+        <input type="text" name="nome" id="nome" [(ngModel)]="nome" required class="form-control" placeholder="nome">
+      </div>
 
       <div class="barbearia-info">
         <label for="servico">Serviço:</label>
-        <select [(ngModel)]="servico" name="servico" id="servico">
+        <select [(ngModel)]="servico" name="servico" id="servico" class="form-control">
           <option *ngFor="let servico of servicos" [value]="servico._id">{{ servico.nome }}</option>
         </select>
       </div>
-
-
-      <div class="calendar">
+      
+      <div class="calendar mt-4">
         <h4>Selecione o dia e horário:</h4>
         <div class="date">
-          <select [(ngModel)]="dia" name="dia" id="dia">
+          <select [(ngModel)]="dia" name="dia" id="dia" class="form-control">
             <option *ngFor="let dia of dias" [value]="dia.dia">{{ dia.dia }}</option>
           </select>
         </div>
-        <div class="time">
+        <div class="time mt-2">
           <label for="horario">Horário:</label>
           <div class="date">
-            <select [(ngModel)]="hora" name="hora" id="hora">
+            <select [(ngModel)]="hora" name="hora" id="hora" class="form-control">
               <option *ngFor="let hora of horas" [value]="hora.hora">{{ hora.hora }}</option>
             </select>
           </div>
         </div>
-        <button type="submit" btn-agendar>Finalizar agendamento</button>
+
+        <!-- Exibição da mensagem de erro -->
+        <div *ngIf="errorMensagem" class="alert alert-danger mt-3">
+          {{ errorMensagem }}
+        </div>
+
+        <button type="submit" class="btn btn-primary mt-4">Finalizar agendamento</button>
       </div>
     </form>
   </div>

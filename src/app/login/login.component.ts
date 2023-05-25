@@ -27,7 +27,7 @@ export class LoginComponent {
     this.loginService.getlogin(cliente).subscribe(
       (response) => {
         console.log(response._id);
-        LoginServiceService.clienteId = response._id; // Salva o ID do cliente no serviço
+       // LoginServiceService.clienteId = response._id; // Salva o ID do cliente no serviço
         this.router.navigate(['/menu']);
       },
       (error) => {

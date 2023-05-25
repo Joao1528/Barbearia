@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { MenuService } from './menu.service';
 import { Router } from '@angular/router';
 import { Barbearia } from './barbearia';
+import { LoginServiceService } from 'src/app/login/login-service.service';
 
 @Component({
   selector: 'app-menu',
@@ -19,6 +20,7 @@ export class MenuComponent {
   ngOnInit() {
     this.MenuService.getBarbearias().subscribe(barbearias => {
       this.barbearia = barbearias;
+      console.log(LoginServiceService.clienteId)
     });
   }
 

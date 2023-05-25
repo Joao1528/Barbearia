@@ -32,7 +32,8 @@ label {
   margin-bottom: 5px;
 }
 
-select {
+select,
+input[type="text"] {
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;

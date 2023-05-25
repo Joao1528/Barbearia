@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const Cliente = require('../models/cliente');
+const Cliente = require ('../models/cliente')
 
-router.post('/cadastros', async (req, res) => {
+router.post('/cadastro', async (req, res) => {
   try {
     const { nome, telefone, email, senha } = req.body;
 
@@ -40,5 +40,15 @@ router.get('/:id', async (req, res) => {
     res.status(500).send();
   }
 });
+
+router.get('/teste', async (req, res) => {
+  try {
+    const clientes = await Cliente.find({});
+    res.status(200).send(clientes);
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
 
 module.exports = router;
