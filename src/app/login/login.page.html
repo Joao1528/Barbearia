@@ -1,0 +1,27 @@
+<ion-content class="ion-padding">
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)" class="ion-text-center">
+    <ion-item class="ion-margin-top">
+      <ion-label position="floating">E-mail</ion-label>
+      <ion-input type="text" name="nome" [(ngModel)]="email" placeholder="email"></ion-input>
+    </ion-item>
+    <ion-item class="ion-margin-top">
+      <ion-label position="floating">Senha</ion-label>
+      <ion-input type="password" name="senha" [(ngModel)]="senha" required placeholder="Senha"></ion-input>
+    </ion-item>
+    <ion-row class="ion-margin-top">
+      <ion-col>
+        <ion-button  expand="block" type="submit">LOGIN</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button routerLink="cadastro" expand="block" routerLink="cadastro">CADASTRO</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <div *ngIf="erro" class="ion-text-center ion-padding-top">
+          <ion-text color="danger">E-mail ou senha estão incorretos.</ion-text>
+        </div>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>

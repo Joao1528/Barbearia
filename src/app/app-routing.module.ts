@@ -8,8 +8,28 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'login',
     pathMatch: 'full'
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'cadastro',
+    loadChildren: () => import('./cadastro/cadastro.module').then( m => m.CadastroPageModule)
+  },
+  {
+    path: 'menu',
+    loadChildren: () => import('./cliente/menu/menu.module').then( m => m.MenuPageModule)
+  },
+  {
+    path: 'perfil/:id',
+    loadChildren: () => import('./cliente/perfil-barbearia/perfil-barbearia.module').then( m => m.PerfilBarbeariaPageModule)
+  },
+  {
+    path: 'agendar/:id',
+    loadChildren: () => import('./cliente/agendar/agendar.module').then( m => m.AgendarPageModule)
   },
 ];
 

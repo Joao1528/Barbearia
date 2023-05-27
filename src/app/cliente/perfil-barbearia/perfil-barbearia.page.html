@@ -1,0 +1,53 @@
+<section class="info" *ngIf="barbeariaSelecionada">
+	<div class="barbearia">
+	  
+	  <h1>{{ barbeariaSelecionada.nome }}</h1>
+	</div>
+ 
+
+
+
+<section class="info">
+	<div>
+		<h2>Horário de Funcionamento</h2>
+		<p>Segunda a Sexta: 9h às 20h<br>
+		Sábado: 9h às 18h<br>
+		Domingo: Fechado</p>
+	</div>
+
+	<ion-item >
+		<ion-label>
+		  <h1>Localização</h1>
+		  <h2>{{ barbeariaSelecionada.endereco }}</h2>
+		</ion-label>
+	  </ion-item>
+
+
+	  
+</section>
+
+	  <ion-item class="info"*ngFor="let servico of servicos">
+		<ion-label>
+		  <h1>Serviços Oferecidos</h1>
+		  <h2>{{  servico._id }}</h2>
+		</ion-label>
+	  </ion-item>
+
+
+
+
+	
+
+
+
+<section class="info" *ngIf="barbeariaSelecionada">
+	<ion-button [routerLink]="'/agendar/' + barbeariaSelecionada._id" >Agendar</ion-button>
+	<ion-button [routerLink] = "'/menu'" fill="clear">Voltar</ion-button>
+</section>
+
+
+	
+
+<footer *ngIf="barbeariaSelecionada">
+  <p>{{ barbeariaSelecionada.nome }} - Todos os direitos reservados </p>
+</footer>
