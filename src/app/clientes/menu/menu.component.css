@@ -1,4 +1,4 @@
-header {
+/* header {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12,7 +12,7 @@ h1 {
   font-weight: bold;
   color: #fff;
   text-shadow: 2px 2px #000;
-}
+} */
 
 .barbearias-container {
   display: flex;
@@ -68,4 +68,9 @@ h1 {
   font-size: 0.9rem;
   color: #666;
   text-align: center;
+}
+
+.imagem-redimensionada {
+  width: 200px;
+  height: 150px;
 }

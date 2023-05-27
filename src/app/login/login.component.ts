@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { cliente } from '../clientes/clientes';
 import { LoginServiceService } from './login-service.service';
 import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-login',

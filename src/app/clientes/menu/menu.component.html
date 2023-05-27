@@ -1,12 +1,17 @@
-<header>
-  <h1>Barber Time</h1>
-</header>
+<!-- <header>
+  <h1>Barber Time </h1>
+</header> -->
+
+
 <div class="barbearias-container">
   <div class="barbearia" *ngFor="let barbearia of barbearia">
     <div class="barbearia-info">
-      <button [routerLink]="'/servico/' + barbearia._id" class="barbearia-nome">{{ barbearia.nome }}</button>
+      <img src="assets/modelo-de-logotipo-vintage-de-barbearia_441059-26.avif" alt="ss" class="imagem-redimensionada">
+      <button  [routerLink]="'/servico/' + barbearia._id" class="barbearia-nome">{{ barbearia.nome }}</button>
      
     </div>
   </div>
 </div>
+
+
 
