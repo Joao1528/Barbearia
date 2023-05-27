@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { cliente } from '../login/cliente';
 import { CadastroService } from './cadastro.service';
 import { Router } from '@angular/router';
+import { AlertController } from '@ionic/angular';
 
 
 @Component({
@@ -16,7 +17,7 @@ export class CadastroPage  {
   telefone: string = ''
   senha: string = ''
 
-  constructor(private cadastroService: CadastroService, private router: Router) { }
+  constructor(private cadastroService: CadastroService, private router: Router,private alertController: AlertController) { }
 
   onSubmit(form:any){
     this.nome = form.value.nome
@@ -36,6 +37,7 @@ export class CadastroPage  {
     this.cadastroService.newCliente(cliente).subscribe(
       cliente =>{
         console.log(cliente)
+        this.router.navigate(['']);
       }
     )
   
@@ -43,7 +45,16 @@ export class CadastroPage  {
   }
 
 
+  async presentAlert() {
+    const alert = await this.alertController.create({
+      header: 'Alert',
+      subHeader: 'Important message',
+      message: 'Cliente cadastrado',
+      buttons: ['OK'],
+    });
 
+    await alert.present();
+  }
   
 
 }

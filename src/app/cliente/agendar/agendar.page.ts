@@ -9,6 +9,7 @@ import { Horas } from './hora';
 import { cliente } from 'src/app/login/cliente';
 import { AgendarService } from './agendar.service';
 import { ActivatedRoute } from '@angular/router';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-agendar',
@@ -17,7 +18,8 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class AgendarPage implements OnInit {
 
-  constructor(private agendarService: AgendarService ,private activatedRoute: ActivatedRoute) { }
+
+  constructor(private agendarService: AgendarService ,private activatedRoute: ActivatedRoute ,private alertController: AlertController) { }
 
   servicos: Servicos[] = [];
   dias: Dias[] = [];
@@ -77,34 +79,60 @@ export class AgendarPage implements OnInit {
     this.agendarService.newAgendamento(agenda).subscribe(
       response => {
         console.log(response);
-        alert('Serviço agendado');
+        this.presentAlert()
+        
       },
       error => {
         console.log(error);
         this.errorMensagem = error.error.message;
-        alert('Ocorreu um erro ao agendar');
+        this.presentErrorAlert()
       }
     );
   }
 
   customAlertOptions = {
-    header: 'Pizza Toppings',
-    subHeader: 'Select your favorite topping',
-    message: 'Choose only one',
+    header: 'Serviço',
+    subHeader: 'Selecione o serviço desejado',
+    message: 'Escolha apenas um',
     translucent: true,
   };
 
   customPopoverOptions = {
-    header: 'Hair Color',
-    subHeader: 'Select your hair color',
-    message: 'Only select your dominant hair color',
+    header: 'Dia',
+    subHeader: 'Selecione o dia desejado',
+   
   };
 
   customActionSheetOptions = {
-    header: 'Colors',
-    subHeader: 'Select your favorite color',
+    header: 'Hora',
+    subHeader: 'Selecione a hora desejada',
   };
+
+  
+
+  async presentAlert() {
+    const alert = await this.alertController.create({
+      header: 'Alert',
+      subHeader: 'Important message',
+      message: 'Serviço agendamento',
+      buttons: ['OK'],
+    });
+
+    await alert.present();
+  }
+
+  async presentErrorAlert() {
+    const alert = await this.alertController.create({
+      header: 'Erro',
+      subHeader: 'Ocorreu um erro ao agendar',
+      message: 'Por favor, tente novamente mais tarde.',
+      buttons: ['OK'],
+    });
+  
+    await alert.present();
+  }
 }
+
 
 
 

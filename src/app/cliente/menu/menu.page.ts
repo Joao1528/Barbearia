@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./menu.page.scss'],
 })
 export class MenuPage implements OnInit {
-
+  barbeariaSelecionada: Barbearia | null = null;
   barbearia: Barbearia [] = [];
 
   constructor(private menuService: MenuService, private router: Router) { }
@@ -21,5 +21,8 @@ export class MenuPage implements OnInit {
     this.menuService.getBarbearias().subscribe(barbearias =>
       this.barbearia = barbearias)
   }
+
+  
+
 
 }

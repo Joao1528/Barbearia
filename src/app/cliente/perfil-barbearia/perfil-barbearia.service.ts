@@ -11,6 +11,7 @@ import { Servicos } from '../agendar/servicos';
 export class PerfilBarbearia {
   private apiUrl = 'http://localhost:3000/barbearia/barbearias';
   private apiUrl2 = 'http://localhost:3000/barbearia'
+  private apiUr3 = 'http://localhost:3000/servicos/list'
 
   constructor(private http: HttpClient) { }
 
@@ -28,7 +29,7 @@ export class PerfilBarbearia {
 
   
   getServicos(): Observable<Servicos[]>{
-    return this.http.get<Servicos[]>(this.apiUrl);
+    return this.http.get<Servicos[]>(this.apiUr3);
   }
 
 

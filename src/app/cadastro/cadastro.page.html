@@ -1,35 +1,34 @@
-<ion-content>
 
-  <form #f="ngForm" (ngSubmit)="onSubmit(f)">
 
-    <div>
-   <ion-label> Nome </ion-label>   
-      <input type="text" id ="nome" name="nome" [(ngModel)]="nome" required="">
-    </div>
+<ion-list>
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)"> 
+  <ion-list>
+    <ion-item>
+      <ion-input id ="nome" name="nome" [(ngModel)]="nome" required="" label="Nome" placeholder="Enter text"></ion-input>
+    </ion-item>
 
-    <div>
-      <ion-label> E-mail </ion-label>  
-      <input type="email" id ="email" name="email" [(ngModel)]="email" required="">
-    </div>
+    <ion-item>
+      <ion-input  id ="telefone" name="telefone" [(ngModel)]="telefone" required="" label="Telefone" type="tel" placeholder="888-888-8888"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input  id ="senha" name="senha" [(ngModel)]="senha" required="" label="Senha" type="password" value="password"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input  id ="email" name="email" [(ngModel)]="email" required="" label="Email" type="email" placeholder="email@domain.com"></ion-input>
+    </ion-item>
 
   
-    <div>
-      <ion-label> Telefone </ion-label>  
-      <input type="tel" id ="telefone" name="telefone" [(ngModel)]="telefone" required="">
-    </div>
-
-
-    <div>
-      <ion-label> Senha </ion-label>  
-      <input type="password" id ="senha" name="senha" [(ngModel)]="senha" required="">
-    </div>
-
-    <ion-button type="subimt">
+  </ion-list>
+  <div style="display: flex; justify-content: center;">
+    <ion-button (click)="presentAlert()" type="submit">
       Cadastrar
     </ion-button>
+  
+    <ion-button routerLink="">
+      Login
+    </ion-button>
+  </div>
 
-    
-  </form> 
-
-
-</ion-content>
+</form>

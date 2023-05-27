@@ -1,53 +1,69 @@
-<section class="info" *ngIf="barbeariaSelecionada">
-	<div class="barbearia">
+<ion-header>
+	<ion-toolbar *ngIf="barbeariaSelecionada">
+	  <ion-title>{{ barbeariaSelecionada.nome }}</ion-title>
+	</ion-toolbar>
+  </ion-header>
+  
+  <ion-content class="ion-padding">
+	<section class="info" *ngIf="barbeariaSelecionada">
 	  
-	  <h1>{{ barbeariaSelecionada.nome }}</h1>
-	</div>
- 
-
-
-
-<section class="info">
-	<div>
-		<h2>Horário de Funcionamento</h2>
-		<p>Segunda a Sexta: 9h às 20h<br>
-		Sábado: 9h às 18h<br>
-		Domingo: Fechado</p>
-	</div>
-
-	<ion-item >
+  
+	  <ion-list>
+		<ion-list-header>
+		  <ion-label>Horário de Funcionamento</ion-label>
+		</ion-list-header>
+		<ion-item>
+		  <ion-label>Segunda a Sexta: 9h às 20h</ion-label>
+		</ion-item>
+		<ion-item>
+		  <ion-label>Sábado: 9h às 18h</ion-label>
+		</ion-item>
+		<ion-item>
+		  <ion-label>Domingo: Fechado</ion-label>
+		</ion-item>
+	  </ion-list>
+  
+	  <ion-item>
 		<ion-label>
 		  <h1>Localização</h1>
 		  <h2>{{ barbeariaSelecionada.endereco }}</h2>
 		</ion-label>
 	  </ion-item>
-
-
-	  
-</section>
-
-	  <ion-item class="info"*ngFor="let servico of servicos">
-		<ion-label>
-		  <h1>Serviços Oferecidos</h1>
-		  <h2>{{  servico._id }}</h2>
-		</ion-label>
-	  </ion-item>
-
-
-
-
+  
+	  <ion-button id="open-modal" expand="block">Ver serviços</ion-button>
+	  <ion-modal #modal trigger="open-modal">
+		<ng-template>
+		  <ion-content>
+			<ion-toolbar>
+			  <ion-title>Modal</ion-title>
+			  <ion-buttons slot="end">
+				<ion-button color="black" (click)="modal.dismiss()">Close</ion-button>
+			  </ion-buttons>
+			</ion-toolbar>
+			<ion-list class="info" *ngFor="let servico of servicos">
+			  <ion-item>
+				<ion-avatar slot="start">
+				  
+				</ion-avatar>
+				<ion-label>
+				  <h2>{{ servico.nome }}</h2>
+				</ion-label>
+			  </ion-item>
+			</ion-list>
+		  </ion-content>
+		</ng-template>
+	  </ion-modal>
+  
+	  <ion-row class="ion-justify-content-center">
+		<ion-col class="ion-text-center" size="auto">
+		  <ion-button [routerLink]="'/agendar/' + barbeariaSelecionada._id" expand="block">Agendar</ion-button>
+		</ion-col>
+		<ion-col class="ion-text-center" size="auto">
+		  <ion-button [routerLink]="'/menu'" fill="clear" expand="block">Voltar</ion-button>
+		</ion-col>
+	  </ion-row>
+	</section>
+  
 	
-
-
-
-<section class="info" *ngIf="barbeariaSelecionada">
-	<ion-button [routerLink]="'/agendar/' + barbeariaSelecionada._id" >Agendar</ion-button>
-	<ion-button [routerLink] = "'/menu'" fill="clear">Voltar</ion-button>
-</section>
-
-
-	
-
-<footer *ngIf="barbeariaSelecionada">
-  <p>{{ barbeariaSelecionada.nome }} - Todos os direitos reservados </p>
-</footer>
+  </ion-content>
+  

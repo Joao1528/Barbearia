@@ -1,20 +1,15 @@
+
+
 <form #f="ngForm" (ngSubmit)="onSubmit(f)" class="mt-4">
 
-  <ion-list>
-    <ion-item>
-      <ion-label class="ion-text-center">{{ barbeariaSelecionada?.nome }}</ion-label>
-    </ion-item>
-  </ion-list>
-  
-  
+  <ion-header>
+	<ion-toolbar *ngIf="barbeariaSelecionada">
+	  <ion-title>{{ barbeariaSelecionada.nome }}</ion-title>
+	</ion-toolbar>
+  </ion-header>
   <br>
   
-  <!-- <div class="barbearia-info">
-    <label for="barbearia">Barbearia:</label>
-    <select [(ngModel)]="barbearias" name="barbeariaSelecionada" id="barbearias" class="form-control">
-      <option *ngIf="barbeariaSelecionada" [value]="barbeariaSelecionada._id">{{ barbeariaSelecionada.nome }}</option>
-    </select>
-  </div> -->
+
 
   <ion-input type="email" fill="solid" label="Email" labelPlacement="floating" helperText="Enter a valid email" errorText="Invalid email" [(ngModel)]="email" name="email"></ion-input>
   <ion-input type="text" fill="solid" label="Nome" labelPlacement="floating" helperText="Enter a valid nome" errorText="Invalid nome" [(ngModel)]="nome" name="nome"></ion-input>
@@ -31,7 +26,7 @@
 
   <ion-list>
     <ion-item>
-      <ion-select [(ngModel)]="dia" name="dia" id="dia" label="dia" [interfaceOptions]="customAlertOptions" interface="alert" placeholder="Select One">
+      <ion-select [(ngModel)]="dia" name="dia" id="dia" label="dia" [interfaceOptions]="customPopoverOptions" interface="alert" placeholder="Select One">
         <ion-select-option *ngFor="let dia of dias" [value]="dia.dia">{{ dia.dia }}</ion-select-option>
       </ion-select>
     </ion-item>
@@ -39,17 +34,16 @@
 
   <ion-list>
     <ion-item>
-      <ion-select [(ngModel)]="hora" name="hora" id="hora" label="hora" [interfaceOptions]="customAlertOptions" interface="alert" placeholder="Select One">
+      <ion-select [(ngModel)]="hora" name="hora" id="hora" label="hora" [interfaceOptions]="customActionSheetOptions" interface="alert" placeholder="Select One">
         <ion-select-option *ngFor="let hora of horas" [value]="hora.hora">{{ hora.hora }}</ion-select-option>
       </ion-select>
     </ion-item>
   </ion-list>
 
   <!-- Exibição da mensagem de erro -->
-  <div *ngIf="errorMensagem" class="alert alert-danger mt-3">
-    {{ errorMensagem }}
-  </div>
+ 
 
-  <ion-button class="ion-text-center" type="submit" color="success">Finalizar agendamento</ion-button>
-
+  <ion-button  class="ion-text-center" type="submit" color="success">Finalizar agendamento</ion-button>
+  
+ 
 </form>

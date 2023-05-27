@@ -13,7 +13,8 @@ export class PerfilBarbeariaPage  {
  
   constructor(private perfilbarbearia : PerfilBarbearia, private  router: Router,private activatedRoute: ActivatedRoute) { }
   
-  
+
+
   servicos: Servicos[] = [];
 
   barbearia: Barbearia[] = [];
@@ -39,7 +40,9 @@ export class PerfilBarbeariaPage  {
         }
       );
     }   
-
+  
   }
-
+  
 }
+
+
