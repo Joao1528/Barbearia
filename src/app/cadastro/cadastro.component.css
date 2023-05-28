@@ -1,4 +1,4 @@
-/* Estilos para o formulário */
+/* Estilos para o formulário
 form {
     max-width: 600px;
     margin: 0 auto;
@@ -38,7 +38,7 @@ form {
   }
   
   /* Estilos para mensagens de erro */
-  .ng-invalid.ng-touched input[type="text"] {
+  /* .ng-invalid.ng-touched input[type="text"] {
     border-color: #dc3545;
   }
   
@@ -54,10 +54,10 @@ form {
   }
   
   /* Estilos para mensagens de sucesso */
-  .success-message {
+  /* .success-message {
     display: none;
     color: #28a745;
     font-size: 12px;
-    margin-top: 5px;
-  }
+    margin-top: 5px; */
+  /* } */ 
   
