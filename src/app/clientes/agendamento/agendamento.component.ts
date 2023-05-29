@@ -65,7 +65,9 @@ export class AgendamentoComponent {
     this.barbearias = form.value.barbearias;
     this.nome = form.value.nome;
     this.email = form.value.email;
-
+    console.log(this.servico)
+    
+    
     let agenda: Agenda = {
       barbearias: this.barbearias,
       dia: this.dia,
@@ -73,6 +75,7 @@ export class AgendamentoComponent {
       servicos: this.servico,
       nome: this.nome,
       email: this.email
+      
     };
 
     this.agendamentoService.newAgendamento(agenda).subscribe(
@@ -87,4 +90,6 @@ export class AgendamentoComponent {
       }
     );
   }
+ 
 }
+
